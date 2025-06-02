@@ -1,40 +1,178 @@
+:root {
+    --light-pink: #FFE4E1;      /* 淺粉色 */
+    --light-blue: #E6F3FF;      /* 淺藍色 */
+    --light-purple: #E6E6FA;    /* 淺紫色 */
+    --text-dark: #4A4A4A;
+    --text-light: #6c757d;
+}
+
+body {
+    background-color: var(--light-blue);
+}
+
+.navbar {
+    background-color: var(--light-pink) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 70px; /* 確保導航列高度適當 */
+}
+
+.navbar-brand, .nav-link {
+    color: var(--text-dark) !important;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #000,  
+                 1px -1px 0 #000,
+                 -1px 1px 0 #000,
+                 1px 1px 0 #000;
+    color: white !important;
+    font-size: 2em;    /* 將字體大小設為原來的兩倍 */
+}
+
+/* 首頁連結特別樣式 */
+.nav-link.active {
+    color: white !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--text-light) !important;
+}
+
 .post-card {
+    background-color: var(--light-pink);
     margin-bottom: 2rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: none;
+    border-radius: 15px;
     padding: 1.5rem;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .post-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .post-title {
-    color: #333;
+    color: var(--text-dark);
     margin-bottom: 1rem;
 }
 
 .post-content {
-    color: #666;
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
 .post-date {
-    color: #888;
+    color: var(--text-light);
     font-size: 0.9rem;
 }
 
 #new-post-form {
-    background-color: #f8f9fa;
+    background-color: var(--light-purple);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 15px;
     margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .form-label {
     font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-control {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: white;
+}
+
+.form-control:focus {
+    border-color: var(--light-pink);
+    box-shadow: 0 0 0 0.2rem rgba(255, 228, 225, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--light-pink) !important;
+    border-color: var(--light-pink) !important;
+    color: var(--text-dark) !important;
+}
+
+.btn-primary:hover {
+    background-color: #FFD4D0 !important;
+    border-color: #FFD4D0 !important;
+}
+
+.image-preview {
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comments-section {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.comment {
+    background-color: var(--light-pink);
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+}
+
+.comment-form {
+    margin-top: 1rem;
+}
+
+.comment-input {
+    background-color: white;
+}
+
+.comment-date {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.alert-info {
+    background-color: var(--light-blue);
+    border-color: #B5D4FF;
+    color: var(--text-dark);
+}
+
+.post-actions {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.like-btn.active {
+    background-color: var(--light-pink);
+    border-color: var(--light-pink);
+    color: white !important;
+}
+
+.favorite-btn.active {
+    background-color: #FFD700;
+    border-color: #FFD700;
+    color: white !important;
+}
+
+.like-btn .fa-heart {
+    color: #ff4d6d;
+}
+
+.favorite-btn .fa-star {
+    color: #FFD700;
+}
+
+.like-count {
+    margin-left: 0.25rem;
 }
 
 @media (max-width: 768px) {
